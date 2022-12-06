@@ -42,7 +42,7 @@ function SignUp(){
     }
     return(
       <div className="form" style={{display:"flex"}}>
-        <h1>Sign up for free</h1>
+        <h1 style={{margin: 0, marginBottom: 30}}>Sign up for free</h1>
         <form onSubmit={handleSubmitForm}>
           <div>
             <label>What should we call you?</label>

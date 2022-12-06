@@ -23,6 +23,7 @@
 .main_side{
     display: flex;
     flex-direction: column;
+    overflow:auto;
     width: 78%;
     background-color: #090f1f;
 }

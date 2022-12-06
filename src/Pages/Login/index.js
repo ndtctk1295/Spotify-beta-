@@ -31,7 +31,7 @@ function Login(){
             if (user.username === userFound.username && user.password === userFound.password){
               localStorage.setItem("userId", JSON.stringify(userFound.id));
               state = true;
-              navigate("/homepage")
+              navigate("/")
             } else {
               message = "Sai username hoac password"
             }
@@ -48,7 +48,7 @@ function Login(){
   
     return(
       <div className="form">
-        <h1>Login to listen</h1>
+        <h1 style={{margin: 0, marginBottom: 30}}>Login to listen</h1>
         <form>
           <div>
             <label>Enter your username</label>

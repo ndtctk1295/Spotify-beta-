@@ -1,41 +1,25 @@
-import React, {useState} from 'react';
-import "./style.css"
+import React from 'react';
+// import "./style.css"
 import {AiFillPlayCircle} from  "react-icons/ai"
 import ArtistList from "../List/ArtistList"
-// import FollowingList from "../List/FollowingList"
-import styled from "styled-components"
 
-let FollowingList = []
-const Info = () => {
+
+const Playlist = () => {
     let artistId = localStorage.getItem("artistId")
-    
-    let artist = ArtistList.find(
-        o => JSON.stringify(o.id)===artistId)
-    const Follow = (event) => {
-        event.preventDefault()
-        FollowingList.push(artist.name)
-        localStorage.setItem("name", JSON.stringify(FollowingList))
-        // FollowingList = JSON.parse(localStorage.getItem("name"))
-    }
-    if (localStorage.getItem("name")) {
-        FollowingList = JSON.parse(localStorage.getItem("name"));
-        // console.log(FollowingList)
-    }
-    
-
-        return(
+    let artist = ArtistList.find(o => JSON.stringify(o.id)===artistId)
+    console.log(artist);
+    return(
         <div className="info">
             
             <div>
                 <div className="header">
-                    <img src={artist.picture} alt={artist.name} style={{marginLeft: "5%", height:"200px", width:"200px"}}/>
-                    <h1 style={{color: "white", marginLeft: "3%", marginTop: "5%", fontSize:"80px"}}>{artist.name}</h1>
+                    <img src="https://i.pinimg.com/originals/ea/70/75/ea707569ecc64bb0cf6c5165f8a9b392.jpg" alt="My Playlist" style={{marginLeft: "5%", height:"200px", width:"200px"}}/>
+                    <h1 style={{color: "white", marginLeft: "3%", marginTop: "5%", fontSize:"80px"}}>My Playlist</h1>
                 </div>  
             </div>
 
             <div className="taskbar" style={{height: 70}}>
                 <AiFillPlayCircle className="raise" style={{color: "white", marginLeft:"5%"}}/>
-                <button className="follow" style={{margin:0, padding: 0, height: 62, width:120, marginLeft: 10}} onClick={Follow}>Follow</button>
             </div>
                     
             <div>
@@ -54,4 +38,4 @@ const Info = () => {
         </div>
     )
 } 
-export default Info;
+export default Playlist;

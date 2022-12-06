@@ -1,13 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 import MenuSide from "../../Components/MenuSide"
-import MainSide from "../../Components/MainSide"
+import Info from "../../Components/Info"
+import Button from "../../Components/Button"
 import MusicPlayer from "../../Components/MusicPlayer"
-import "./style.css"
+import Playlist from "../../Components/Playlist"
+// import "./style.css"
 
-
-
-const Home = () => {
+const MyPlaylist = () => {
     const userId = localStorage.getItem("userId");
     const ButtonDisplay = styled.div`   
         button{
@@ -20,10 +20,13 @@ const Home = () => {
                 <MenuSide/>
             </div>
             <div className="main_side">
-                {userId !== "" && userId != null ? <ButtonDisplay><MainSide/></ButtonDisplay> : <MainSide/>}
+                {userId != null && userId !=="" ? null : <div className="button" style={{display: "flex", color: "white", marginLeft: "84%", marginTop: "2%", marginBottom:"1%"}}>
+                        <Button/>
+                </div>}
+                <Playlist/>   
             </div>
             <MusicPlayer/>
         </div>
     )    
 }
-export default Home;
+export default MyPlaylist;

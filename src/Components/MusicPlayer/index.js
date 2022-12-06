@@ -30,7 +30,7 @@ export default function MusicPlayer() {
         showDownload={false}
         showReload={false}
         defaultPosition={{bottom: "1%", right: "1%"}}
-        mode= "full"
+        mode= "mini"
       />
     </div>
   );

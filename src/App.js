@@ -1,11 +1,11 @@
 import {Routes, Route, Outlet, Navigate} from "react-router-dom"
 import './App.css';
+import styled from "styled-components"
 import Home from "./Pages/Home"
 import Login from "./Pages/Login"
 import SignUp from "./Pages/SignUp"
-import PrivateHome from "./Pages/PrivateHome"
 import Artist from "./Pages/Artist"
-import PrivateArtist from "./Pages/PrivateArtist"
+import MyPlaylist from "./Pages/MyPlaylist"
 
 
 function App() {
@@ -17,18 +17,22 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/artist" element={<Artist/>}/>
         <Route element={<PrivateRoute/>}>
-          <Route path="/homepage" element={<PrivateHome/>}/>
-          <Route path="/realartist" element={<PrivateArtist/>}/>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/artist" element={<Artist/>}/>
+          <Route path="/myplaylist" element={<MyPlaylist/>}/>
         </Route>
       </Routes>
       {/* <Artist/> */}
+      {/* <MyPlaylist/> */}
     </div>
   );
 }
 
+
 const PrivateRoute = () => {
-  let userId = localStorage.getItem("userId");
-  return userId != null && userId !== "" ? <Outlet/> : <Navigate to= "/homepage"/>
+  const userId = localStorage.getItem("userId");
+  return userId !== null && userId !== "" ? <Outlet/> : <Navigate to= "/"/>
 }
+
 
 export default App;
