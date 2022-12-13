@@ -7,10 +7,10 @@ import styled from "styled-components"
 
 let FollowingList = []
 const Info = () => {
-    let artistId = localStorage.getItem("artistId")
+    let artistName = localStorage.getItem("artistName")
     
     let artist = ArtistList.find(
-        o => JSON.stringify(o.id)===artistId)
+        o => JSON.stringify(o.name)===artistName)
     const Follow = (event) => {
         event.preventDefault()
         FollowingList.push(artist.name)

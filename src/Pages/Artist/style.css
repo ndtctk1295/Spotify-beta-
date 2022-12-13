@@ -1,0 +1,16 @@
+.unfollow:hover {
+  background-color: rgba(104, 85, 224, 1);
+  color: white;
+}
+
+.unfollow {
+  margin-left: 8px;
+  height: 62px;
+  margin-left: 10;
+  color: black;
+  background: white;
+  border-radius: 20px;
+  width: 120px;
+  transition: 0.4s;
+  cursor: pointer;
+}
